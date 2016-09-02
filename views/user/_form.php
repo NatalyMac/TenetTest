@@ -55,7 +55,6 @@ use yii\helpers\Url;
         ]
     ]);?>
     
-
     <div class="username">
         <?= $model->isNewRecord ? '': Html::encode($model->street->name) ?>
     </div>

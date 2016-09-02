@@ -33,30 +33,7 @@ class StreetController extends Controller
      * Lists all User models.
      * @return mixed
      */
-   /* public function actionLists($id)
-    {
-        $countStreets =  Street::find()
-            ->where(['city_id' => $id])
-            ->count();
-        $streets =  Street::find()
-            ->where(['city_id' => $id])
-            ->all();
-        if ($countStreets > 0){
-            foreach($streets as $street){
-                echo "<option value='".$street->id."'>".$street->name."</option>";
-            }
-        }
-        else {
-            echo "<option></option>";
-        }
-    }
-
-    public function actionListsPurge()
-    {
-            echo "<option></option>";
-    }
-
-*/
+    
     public function actionLists() {
         if (isset($_POST['depdrop_parents'])) {
             $parents = $_POST['depdrop_parents'];

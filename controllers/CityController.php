@@ -34,8 +34,7 @@ class CityController extends Controller
      * @return mixed
      */
 
-    public function actionLists() {
-        $out = [];
+    public function actionLists() {;
         if (isset($_POST['depdrop_parents'])) {
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
