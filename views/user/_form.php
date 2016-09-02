@@ -14,7 +14,9 @@ use yii\helpers\Url;
 
 <div class="user-form">
 
-    <?php $form = ActiveForm::begin(['action' => $model->isNewRecord ? 'create' : 'update?id='.$model->id]) ?>
+    <?php
+
+    $form = ActiveForm::begin(['action' => $model->isNewRecord ? 'create' : 'update?id='.$model->id]) ?>
 
     <div class="form-inline">
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
@@ -40,6 +42,10 @@ use yii\helpers\Url;
                 
         ]) ?>
 
+    <div class="username">
+        <?= $model->isNewRecord ? '': Html::encode($model->city->name) ?>
+    </div>
+
     <?=$form->field($model, 'city_id')->widget(DepDrop::className(), [
         'options'=>['id'=>'city_id-id'],
         'pluginOptions'=>[
@@ -48,6 +54,11 @@ use yii\helpers\Url;
         'url'=>Url::to(['/city/lists'])
         ]
     ]);?>
+    
+
+    <div class="username">
+        <?= $model->isNewRecord ? '': Html::encode($model->street->name) ?>
+    </div>
 
     <?= Html::hiddenInput('input-type-1', 'Additional value 1', ['id'=>'input-type-1']);?>
     <?= Html::hiddenInput('input-type-2', 'Additional value 2', ['id'=>'input-type-2']);?>
@@ -62,6 +73,10 @@ use yii\helpers\Url;
          'params'=>['input-type-1', 'input-type-2']
         ]
     ]);?>
+
+    <div class="username">
+        <?= $model->isNewRecord ? '': Html::encode($model->house->name) ?>
+    </div>
 
     <?=$form->field($model, 'house_id')->widget(DepDrop::className(), [
         'options'=>['id'=>'house_id-id'],
