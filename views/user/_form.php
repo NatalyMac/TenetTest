@@ -48,6 +48,7 @@ use yii\helpers\Url;
 
     <?=$form->field($model, 'city_id')->widget(DepDrop::className(), [
         'options'=>['id'=>'city_id-id'],
+        //'data'=>['10'=> 'City'],
         'pluginOptions'=>[
         'depends'=>['district_id-id'],
         'placeholder'=>'Select...',
@@ -58,13 +59,11 @@ use yii\helpers\Url;
     <div class="username">
         <?= $model->isNewRecord ? '': Html::encode($model->street->name) ?>
     </div>
-
-    <?= Html::hiddenInput('input-type-1', 'Additional value 1', ['id'=>'input-type-1']);?>
-    <?= Html::hiddenInput('input-type-2', 'Additional value 2', ['id'=>'input-type-2']);?>
-
+    
      <?=$form->field($model, 'street_id')->widget(DepDrop::className(), [
          'type'=>DepDrop::TYPE_SELECT2,
          'options'=>['id'=>'street_id-id', 'placeholder'=>'Select ...'],
+        // 'data'=>['10'=> 'Street'],
          'select2Options'=>['pluginOptions'=>['allowClear'=>true]],
          'pluginOptions'=>[
          'depends'=>['city_id-id'],
@@ -81,9 +80,10 @@ use yii\helpers\Url;
         'options'=>['id'=>'house_id-id'],
         'pluginOptions'=>[
             'depends'=>['street_id-id'],
+         //   'data'=>['10'=> 'house'],
             'placeholder'=>'Select...',
             'initialize' => true,
-            'initDepends'=>['city_id_id'],
+            'initDepends'=>['district_id_id'],
             'url'=>Url::to(['/house/lists'])
         ]
     ]);?>
