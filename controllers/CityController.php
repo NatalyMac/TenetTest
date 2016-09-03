@@ -40,13 +40,6 @@ class CityController extends Controller
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
                 $district_id = $parents[0];
-
-
-                if (!empty($_POST['depdrop_params'])) {
-                    $params = $_POST['depdrop_params'];
-                }
-
-
                 $cities =  City::find()
                     ->where(['district_id' => $district_id])
                     ->asArray()
