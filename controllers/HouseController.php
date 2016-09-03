@@ -34,7 +34,8 @@ class HouseController extends Controller
      * @return mixed
      */
     
-    public function actionLists() {
+    public function actionLists() 
+    {
         if (isset($_POST['depdrop_parents'])) {
             $parents = $_POST['depdrop_parents'];
             if ($parents != null) {
