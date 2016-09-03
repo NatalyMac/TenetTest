@@ -42,7 +42,7 @@ use yii\helpers\Url;
                 
         ]) ?>
 
-    <div class="username">
+    <div class="cityname">
         <?= $model->isNewRecord ? '': Html::encode($model->city->name) ?>
     </div>
 
@@ -55,7 +55,7 @@ use yii\helpers\Url;
         ]
     ]);?>
     
-    <div class="username">
+    <div class="streetname">
         <?= $model->isNewRecord ? '': Html::encode($model->street->name) ?>
     </div>
 
@@ -70,7 +70,7 @@ use yii\helpers\Url;
         ]
     ]);?>
 
-    <div class="username">
+    <div class="housename">
         <?= $model->isNewRecord ? '': Html::encode($model->house->name) ?>
     </div>
 
